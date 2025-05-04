@@ -1,21 +1,16 @@
-# Null-Shot Prompting: Rethinking Prompting Large Language Models With Hallucination
+# RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning
 
-This repository contains the code for the paper "Null-Shot Prompting: Rethinking Prompting Large Language Models With Hallucination" accepted at [EMNLP 2024 (Main, long)](https://2024.emnlp.org/program/accepted_main_conference/).
-
-For data and analysis code, please refer to the [data repository](https://github.com/Pittawat2542/null-shot-results).
+This repository contains the code for the paper "RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning".
+For data and analysis code, please refer to the [data repository](Link to me available soon).
 
 ## Authors
-Pittawat Taveekitworachai, Febri Abdullah, and Ruck Thawonmas
+Anonymous
 
-## Abstract
 
-This paper investigates an interesting phenomenon where we observe performance increases in large language models (LLMs) when providing a prompt that causes and exploits hallucination. We propose null-shot prompting, a counter-intuitive approach where we deliberately instruct LLMs to reference a null, non-existent, section. We evaluate null-shot prompting across a variety of tasks, including arithmetic reasoning, commonsense reasoning, and reading comprehension. Notably, we observe a substantial increase in performance in arithmetic reasoning tasks for various models, with up to a 44.62% increase compared to a baseline in one model. Additional experiments on more complex mathematical problem-solving and hallucination detection benchmarks also reveal similar benefits from this approach. Furthermore, we explore the effects of combining reasoning, which typically mitigates hallucination, with hallucination within the prompt and find several cases of performance improvements. We hope this paper stimulates further interest, investigation, and discussion on how hallucination in prompts may not only affect LLMs but, in certain cases, enhance their performance.
 
 ## File structure
 ```
-.
-├── .env.example # Example of the environment file
-├── .gitignore # Git ignore file
+
 ├── datasets # Supported evaluation datasets
 ├── main.py # The main entry point of the program, new dataset and model should be added here first
 ├── requirements.txt # Required Python packages
@@ -32,26 +27,27 @@ This paper investigates an interesting phenomenon where we observe performance i
 ## Installation and Usage
 0. Create a virtual environment (if needed):
 ```bash
-conda create -n null-shot python=3.11
+conda create -n re-zs-cot python=3.11
 ```
 and activate it:
 ```bash
-conda activate null-shot
+conda activate re-zs-cot
 ```
-1. Copy `.env.example` and rename it to `.env`. Follow instructions respective model providers to get the necessary API keys.
+1. Make a new `.txt` file and rename it to `.env`. Follow instructions respective model providers to get the necessary API keys.
 2. Install the requirements:
 ```bash
 pip install -r requirements.txt
 ```
-3. Main program is `main.py`. It can be run with the following command:
+3. Make sure Ollama is installed and the requried models are downloaded.
+4. Main program is `main.py`. It can be run with the following command:
 ```bash
 python main.py <command> <options>
 ```
 The main program supports the following commands:
 - `--help`, `-h`: Show help message
-- `--models`, `-m`: [Required] Models to perform tasks `[gpt-3.5-turbo|gpt-4-turbo|palm-2-text|palm-2-chat|gemini-pro-text|gemini-pro-chat|claude-2.1|claude-3-haiku|claude-3-sonnet|claude-3-opus|llama-2-7b|llama-2-13b|llama-2-70b|llama-2-chat-7b|llama-2-chat-13b|llama-2-chat-70b|pythia-14m|pythia-31m|pythia-70m|pythia-160m|pythia-410m|pythia-1b|pythia-1.4b|pythia-2.8b|pythia-6.9b|pythia-12b|qwen-1.5-0.5b-chat|qwen-1.5-1.8b-chat|qwen-1.5-4b-chat|qwen-1.5-7b-chat|qwen-1.5-14b-chat|qwen-1.5-32b-chat|qwen-1.5-72b-chat|all]`
-- `--tasks`, `-t`: [Required] Tasks to perform `[all|triviaqa|anli|wmt-ja-en|wmt-en-ja|race-h|race-m|winogrande|csqa|strategyqa|openbookqa|aqua|gsm8k|svamp|halueval-general|halueval-dialogue|halueval-qa|halueval-summarization|math-algebra|math-count-prob|math-geometry|math-number|math-int-algebra|math-pre-algebra|math-pre-calc]`
-- `--prompting`, `-p`: [Required] Prompting technique to use `[zero-shot|few-shot|null-shot|cot|zero-shot-cot|null-shot-cot|null-shot-after|null-shot-v1|null-shot-v2|null-shot-v3|all]`
+- `--models`, `-m`: [Required] Models to perform tasks `[gpt-4.1-2025-04-14|gpt-4.1-mini-2025-04-14|gpt-4.1-nano-2025-04-14|gpt-4o-2024-08-06|gpt-4o-mini-2024-07-18|phi4:14b-q4_K_M|mistral-nemo:12b-instruct-2407-q4_K_M|qwen2.5:14b-instruct-q4_K_M|gemma3:12b-it-q4_K_M|granite3.2:2b-instruct-q4_K_M|granite3.3:2b|llama3.2:3b-instruct-q4_K_M|qwen2.5:3b-instruct-q4_K_M|gemma2:2b-instruct-q4_K_M|phi4-mini:3.8b-q4_K_M|granite3.2:8b-instruct-q4_K_M|granite3.3:8b|llama3.1:8b-instruct-q4_K_M|mistral:7b-instruct-q4_K_M|qwen2.5:7b-instruct-q4_K_M|gemma2:9b-instruct-q4_K_M|all]`
+- `--tasks`, `-t`: [Required] Tasks to perform `[all|triviaqa|race-h|race-m|winogrande|csqa|strategyqa|openbookqa|aqua|gsm8k|math-algebra|math-count-prob|math-geometry|math-number|math-int-algebra|math-pre-algebra|math-pre-calc]`
+- `--prompting`, `-p`: [Required] Prompting technique to use `[zero-shot|few-shot|re-1-1|re-1-2|re-1-3|re-2-1|re-2-2|re-2-3|re-3-1|re-3-2|re-3-3|re-4-1|re-4-2|re-4-3|re-5-1|re-5-2|re-5-3|re-6-1|re-6-2|re-6-3|re-7-1|re-7-2|re-7-3|re-8-1|re-8-2|re-8-3|all]`
 - `--output-path`, `-r`: Path to store results `[default: results]`
 - `--evaluate-only`, `-e`: Evaluate only, do not run inference
 - `--existing-result-root-path`, `-e-r`: Root path to existing results `[default:
@@ -59,5 +55,5 @@ The main program supports the following commands:
 
 ## Example
 ```bash
-python main.py -m gpt-3.5-turbo -t math-algebra -p null-shot
+python main.py -m gpt-4.1-2025-04-14 -t aqua -p zero-shot
 ```
