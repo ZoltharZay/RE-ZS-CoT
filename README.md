@@ -39,7 +39,10 @@ conda activate re-zs-cot
 pip install -r requirements.txt
 ```
 3. Make sure Ollama is installed and the requried models are downloaded.
-4. Main program is `main.py`. It can be run with the following command:
+ ```bash
+ollama run [model name]
+```
+5. Main program is `main.py`. It can be run with the following command:
 ```bash
 python main.py <command> <options>
 ```
