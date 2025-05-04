@@ -1,0 +1,19 @@
+from src.models.data_item import DataItem
+from src.prompting.prompting import Prompting
+
+
+class REZSCOT1V2(Prompting):
+    """(Variant 2)."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    @classmethod
+    def get_prompt(cls, prompt: str, examples: list[DataItem] = None) -> str:
+        magic = 'You are an expert Mathematician.\n'
+        magic2= "Use your knowledge as an expert Mathematician to think step-by-step before answering."
+        magic1= "You are an expert Mathematician. Use your knowledge as an expert Mathematician to think step-by-step before answering.\n"
+        return   prompt + magic1
+
+    def __str__(self) -> str:
+        return "Role-Enhanced Zero-Shot Chain-of-Thought Prompting (Mathematician)"
