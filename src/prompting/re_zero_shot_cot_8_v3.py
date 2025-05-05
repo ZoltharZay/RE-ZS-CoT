@@ -10,8 +10,8 @@ class REZSCOT8V3(Prompting):
 
     @classmethod
     def get_prompt(cls, prompt: str, examples: list[DataItem] = None) -> str:
-        magic1 = 'You are an expert Polymath. Use your knowledge as an expert Polymath to think step-by-step before answering.\n'
-        magic2 = 'You are an expert Polymath. Use your knowledge as an expert Polymath to think step-by-step before answering.\n'
+        magic1 = 'You are an expert Polymath.\n'
+        magic2 = 'Use your knowledge as an expert Polymath to think step-by-step before answering.\n'
         return  magic1 + prompt + magic2
 
     def __str__(self) -> str:
