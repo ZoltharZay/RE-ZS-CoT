@@ -1,7 +1,7 @@
 # RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning
 
 This repository contains the code for the paper "RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning".
-For data and analysis code, please refer to the [data repository](Link to me available soon).
+For data and analysis code, please refer to the [data repository](Link to be available soon).
 
 ## Authors
 Anonymous
