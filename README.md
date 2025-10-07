@@ -1,7 +1,7 @@
 # RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning
 
 This repository contains the code for the paper "RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning".
-For data, please refer to the [data repository](https://mega.nz/file/C0wmRbDQ#isndJTevyI2VU8ctil-VRslkXeBQv3Zs1AJSdYU3CHk).
+For results form the static version, please refer to the [data repository-1](https://mega.nz/file/C0wmRbDQ#isndJTevyI2VU8ctil-VRslkXeBQv3Zs1AJSdYU3CHk). For results from the dynamic version, please refer to the [data repository-2](https://mega.nz/file/z5AyUCpJ#aBWHlDcF5T1gz3uiwFYA-bgRUvo7SfzHlpj6S2pd0qw).
 
 ## Authors
 Anonymous
@@ -60,3 +60,4 @@ The main program supports the following commands:
 ```bash
 python main.py -m gpt-4.1-2025-04-14 -t aqua -p zero-shot
 ```
+
