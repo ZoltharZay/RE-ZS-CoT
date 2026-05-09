@@ -1,6 +1,6 @@
-# RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning
+# A Large-Scale Evaluation of Role-Enhanced Zero-Shot Chain-of-Thought Prompting
 
-This repository contains the code for the paper "RE-evaluating LLMs: Role-Enhanced Zero-Shot Chain-of-Thought Prompting for Better Reasoning".
+This repository contains the code for the paper "A Large-Scale Evaluation of Role-Enhanced Zero-Shot Chain-of-Thought Prompting".
 For results form the static version, please refer to the [data repository-1](https://mega.nz/file/C0wmRbDQ#isndJTevyI2VU8ctil-VRslkXeBQv3Zs1AJSdYU3CHk). For results from the dynamic version, please refer to the [data repository-2](https://mega.nz/file/z5AyUCpJ#aBWHlDcF5T1gz3uiwFYA-bgRUvo7SfzHlpj6S2pd0qw).
 
 ## Authors
